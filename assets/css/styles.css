@@ -98,6 +98,7 @@ i{
 
 /* Floating background image */
 .floating-background-image{
+    width: 100%;
     height: 45rem;
     position: absolute;
     top: 0;
@@ -106,6 +107,7 @@ i{
 }
 
 .floating-background-image img{
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -379,14 +381,147 @@ i{
     background-color: #2e303b;
 }
 
-
-
 /* Media queries */
 @media screen and (min-width: 768px) {
-    
+    .nav{
+        height: 7rem;
+    }
+
+    .independent-title{
+        font-size: var(--font-size-large);
+        padding: 4rem 0 2rem;
+    }
+
+    .card-body{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: var(--gap-medium);
+        padding-block: 2.5rem;
+    }
+
+    .card-image{
+        padding: 0;
+    }
+
+    .card-image img{
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .management-area-container{
+        grid-template-columns: 35rem 1fr;
+    }
+
+    .footer-container{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .copyright-information{
+        order: 0;
+    }
+
+    .footer .list{
+        flex-direction: row;
+        margin-left: auto;
+    }
+
+    .footer .list-link{
+        padding-left: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-  
- 
+    .menu-toggle-btn{
+        display: none !important;
+    }
+
+    .nav-mobile{
+        width: initial;
+        height: initial;
+        background-color: initial;
+        position: initial;
+        padding: initial;
+        transform: initial;
+        transition: initial;
+    }
+
+    .nav-mobile > .list{
+        flex-direction: row;
+        margin-left: 4rem;
+    }
+
+    .list-link,
+    .card-body-link{
+        transition: color .25s, background-color .25s;
+    }
+    
+    .nav-mobile .list-link{
+        border-radius: .4rem;
+    }
+
+    .current,
+    .nav-mobile .list-link:hover,
+    .nav-mobile .list-link:focus{
+        background-color: var(--accent-color);
+        color: var(--light-color);
+    }
+
+    .dropdown{
+        position: relative;
+    }
+
+    .dropdown-menu{
+        width: 25rem;
+        height: initial;
+        background-color: var(--light-color);
+        padding: 1.5rem;
+        margin-left: 0;
+        border-radius: .4rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateY(.8rem);
+        box-shadow: 0 0 3rem rgb(23, 23, 23, .2);
+        transition: transform .25s, opacity .25s;
+    }
+
+    .dropdown.active .dropdown-menu{
+        transform: translateY(1.5rem);
+    }
+
+    .dropdown-menu .list-link{
+        display: block;
+    }
+
+    .card-body-link:hover{
+        background-color: #1ba190;
+    }
+
+    .card-group{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .border-green{
+        grid-column: 1 / -1;
+    }
+
+    .border-yellow,
+    .border-orange{
+        grid-column: 1 / 2;
+    }
+
+    .border-pink{
+        grid-column: 2 / -1;
+        grid-row: 2 / 4;
+    }
+    
+    .card-group .list-link:hover{
+        background-color: var(--light-color);
+        color: var(--dark-color);
+    }
+
+    .footer .list-link:hover{
+        color: var(--accent-color);
+    }
 }
